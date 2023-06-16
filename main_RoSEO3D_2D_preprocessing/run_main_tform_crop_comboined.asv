@@ -1,0 +1,63 @@
+
+%% set the data want to analyse
+sheetFolder = 'E:\Experimental_data\20220814 A1-LCD\processed data RoSEO\RoSEO_dataSheet\';
+sheetName = {'RoIsheet_data43_47_FoV1.xlsx'};
+
+
+
+
+%%
+for ii = 1:numel(sheetName)
+%% read the sheet info and create necessary folder
+opts = detectImportOptions([sheetFolder,sheetName{ii}]);
+opts = setvartype(opts,'char');  % or 'string'
+sheet_cur= readtable([sheetFolder,sheetName{ii}],opts);
+sheet_cur = string(table2array(sheet_cur(:,2:3)));
+para_data = f_table2struct(sheet_cur);
+
+%
+
+% check if the save fileExit, create new one
+time = datestr(now,'yyyymmdd_HH_MM');
+if isdir(strcat(para_data.DatafileFolder,para_data.saveData_folderName))
+    mkdir(strcat(para_data.DatafileFolder,para_data.saveData_folderName,string(time),'results_save'));
+     % File exists.
+else
+    mkdir(strcat(para_data.DatafileFolder,para_data.saveData_folderName));
+    mkdir(strcat(para_data.DatafileFolder,para_data.saveData_folderName,string(time)));
+end
+
+%% create tform using the imaging sample
+
+fileFolder,W,pixel_sz,photonThred,frame_thred,ratio_y2x,center,ROI,filter_close_emitter
+
+
+
+
+
+%% crop image using the above tform
+
+
+
+
+
+
+
+%% estimate background
+
+
+
+
+
+
+%% estimate using RoSEO
+
+
+
+
+
+
+%% reconstruaction validation
+
+end
+
