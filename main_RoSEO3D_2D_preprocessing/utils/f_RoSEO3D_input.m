@@ -29,7 +29,7 @@ imgPara.axial_grid_points = RoSEOPara.axial_grid_points;  % build the z slices
 imgPara.twoD_fitRange = RoSEOPara.twoD_fitRange; %
 reg = RoSEOPara.reg;
 NFP = RoSEOPara.NFP;
-imgPara.scaling_factor = [1,1,1];
+imgPara.scaling_factor = [100,100,100];
 
 %%
 % build microscope object used in the RoSEO2D for finding the 
